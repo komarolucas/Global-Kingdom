@@ -1,0 +1,462 @@
+#game {
+
+    width: 100%;
+
+    max-width: 100vw;
+
+    margin: 0;
+
+    padding: 10px;
+
+    box-sizing: border-box;
+
+}
+
+/*
+================================
+KINGDOM UI
+================================
+*/
+
+.top-bar {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 15px;
+
+    margin-bottom: 20px;
+
+}
+
+.resource {
+
+    background: #1c2228;
+
+    border: 1px solid #2f3944;
+
+    padding: 12px;
+
+    border-radius: 10px;
+
+    min-width: 140px;
+
+    text-align: center;
+
+    font-weight: bold;
+
+}
+
+.card {
+
+    background: #1c2228;
+
+    border: 1px solid #2f3944;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin-bottom: 20px;
+
+}
+
+.grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            auto-fit,
+            minmax(
+                260px,
+                1fr
+            )
+        );
+
+    gap: 20px;
+
+}
+
+.building {
+
+    background: #262d35;
+
+    border: 1px solid #3a4754;
+
+    padding: 15px;
+
+    border-radius: 12px;
+
+}
+
+.building h3 {
+
+    margin-top: 0;
+
+}
+
+.quest {
+
+    background: #262d35;
+
+    border: 1px solid #394553;
+
+    padding: 10px;
+
+    border-radius: 8px;
+
+    margin-top: 10px;
+
+}
+
+/*
+================================
+BUTTONS
+================================
+*/
+
+button {
+
+    width: 100%;
+
+    padding: 10px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    background: gold;
+
+    color: #111;
+
+    font-weight: bold;
+
+    transition: .15s;
+
+}
+
+button:hover {
+
+    opacity: .95;
+
+    transform: translateY(-1px);
+
+}
+
+/*
+================================
+WORLD LAYOUT
+================================
+*/
+
+.world-layout {
+
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr)
+        320px;
+
+    gap: 15px;
+
+    height: calc(100vh - 120px);
+
+}
+
+.world-view {
+
+    background-image:
+        url("../assets/map/world-background.png");
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    border: 1px solid #2f3944;
+
+    border-radius: 12px;
+
+    overflow: auto;
+
+    padding: 12px;
+
+}
+
+.world-sidebar {
+
+    background: #1c2228;
+
+    border: 1px solid #2f3944;
+
+    border-radius: 12px;
+
+    padding: 15px;
+
+    overflow-y: auto;
+
+}
+
+.world-sidebar h3 {
+
+    margin-top: 0;
+
+}
+
+/*
+================================
+MAP CONTROLS
+================================
+*/
+
+.map-controls {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+.map-controls button {
+
+    width: auto;
+
+    min-width: 65px;
+
+}
+
+/*
+================================
+MAP GRID
+================================
+*/
+
+ 
+
+    .map-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(
+            41,
+            42px
+        );
+
+    gap: 0;
+
+    width: fit-content;
+
+    border-radius: 8px;
+
+    background: transparent;
+
+    padding: 0;
+
+}
+
+
+.tile {
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+
+    user-select: none;
+
+    cursor: pointer;
+
+    transition:
+        transform .1s,
+        filter .1s;
+
+}
+
+.tile:hover {
+
+    transform: scale(1.05);
+
+    filter: brightness(1.1);
+
+}
+
+/*
+================================
+TERRAINS
+================================
+*/
+
+.grass {
+
+    background: transparent;
+
+}
+
+.forest {
+
+    background: transparent;
+
+}
+
+.mountain {
+
+    background: transparent;
+
+}
+
+.water {
+
+    background: transparent;
+
+}
+
+.castle {
+
+    background: transparent;
+
+}
+
+
+ .bandit {
+
+    background: transparent;
+
+}
+
+/*
+================================
+REPORTS
+================================
+*/
+
+.report {
+
+    background: #262d35;
+
+    border: 1px solid #394553;
+
+    border-radius: 8px;
+
+    padding: 10px;
+
+    margin-top: 10px;
+
+}
+
+/*
+================================
+SCROLLBAR
+================================
+*/
+
+::-webkit-scrollbar {
+
+    width: 10px;
+
+    height: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+
+    background: #101214;
+
+}
+
+::-webkit-scrollbar-thumb {
+
+    background: #394553;
+
+    border-radius: 10px;
+
+}
+
+/*
+================================
+MOBILE
+================================
+*/
+
+@media (max-width: 1200px) {
+
+    .world-layout {
+
+        grid-template-columns: 1fr;
+
+        height: auto;
+
+    }
+
+    .world-sidebar {
+
+        min-height: 250px;
+
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .resource {
+
+        min-width: 100%;
+
+    }
+
+    .map-grid {
+
+        grid-template-columns:
+            repeat(
+                41,
+                28px
+            );
+
+    }
+
+    .tile {
+
+    width: 42px;
+
+    height: 42px;
+
+    background: transparent;
+
+    border: none;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    font-size: 20px;
+
+    user-select: none;
+
+    cursor: pointer;
+
+    transition:
+        transform .1s,
+        filter .1s;
+
+}
+
+}
+
